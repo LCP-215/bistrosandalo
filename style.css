@@ -1,40 +1,74 @@
-
-body {
-    font-family: sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #fff;
-    color: #333;
-}
+/* Header Layout */
 header {
-    background-color: #539158;
-    color: white;
-    padding: 20px;
-    text-align: center;
+  background-color: #539158;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  position: relative;
 }
-nav {
-    background-color: #666;
-    padding: 10px;
-    text-align: center;
+
+.header-left,
+.header-center,
+.header-right {
+  flex: 1;
+  text-align: center;
 }
-nav a {
-    margin: 0 10px;
-    color: #aaa;
-    text-decoration: none;
+
+.header-left {
+  text-align: left;
 }
-nav a:hover {
-    text-decoration: underline;
+
+.header-right {
+  text-align: right;
 }
-main {
-    padding: 20px;
+
+.logo {
+  height: 40px;
 }
-.hero {
-    width: 100%;
-    max-height: 300px;
-    object-fit: cover;
+
+/* Menu Button */
+.menu-toggle {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
 }
-footer {
-    background-color: #666;
-    text-align: center;
-    padding: 10px;
+
+/* Slide Down Menu */
+nav#nav-menu {
+  display: none;
+  flex-direction: column;
+  background-color: #666;
+  text-align: center;
+  animation: slideDown 0.3s ease-in-out forwards;
+}
+
+nav#nav-menu a {
+  color: #fff;
+  padding: 10px;
+  text-decoration: none;
+  border-top: 1px solid #555;
+}
+
+nav#nav-menu a:hover {
+  background-color: #555;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Show menu with class */
+nav#nav-menu.show {
+  display: flex;
 }
